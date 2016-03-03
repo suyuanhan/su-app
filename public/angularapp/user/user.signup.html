@@ -1,0 +1,100 @@
+<div class="modal-content post-radius">
+    <div class="modal-header">
+        <button class="modal-close-btn" type="button">×</button>
+        <h4>欢迎加入</h4>
+    </div>
+    <form ng-controller="UserController as User" name="signUpForm" novalidate="novalidate">
+        <fieldset>
+            <label for="username">用户名：</label>
+            <div class="error-messages" ng-cloak
+                 ng-messages="signUpForm.username.$error">
+                <div ng-message="empty">需要输入用户名</div>
+                <div ng-message="isUnique">用户名已被注册</div>
+                <div ng-message="pattern">用户名不包含空格</div>
+                <div ng-message="maxLength">用户名长度在16个英文或者8个中文以内</div>
+            </div>
+            <div ng-cloak ng-show="signUpForm.username.$touched && signUpForm.username.$valid" class="success-message">
+                <i
+                        class="tick-icon"></i></div>
+            <div ng-cloak dis-loading="signUpForm.username.$pending" class="pending-message" size="12"></div>
+            <input
+                    id="username" name="username" type="text" ng-trim="false"
+                    ng-model="User.signupModel.username"
+                    ng-model-options="{updateOn:'blur'}"
+                    check-unique="username"
+                    check-input
+                    check-pattern='/\s+/g' ;
+                    check-max-length="16"
+                    ng-class="{'error':signUpForm.username.$invalid }"
+                    ng-disabled="User.userData.isRefresh"
+                    placeholder="输入用户名"
+            >
+        </fieldset>
+        <fieldset>
+            <label for="email">Email地址：</label>
+            <div class="error-messages" ng-cloak ng-show="!signUpForm.email.$pending"
+                 ng-messages="signUpForm.email.$error">
+                <div ng-message="empty">需要输入email</div>
+                <div ng-message="pattern">输入正确的email格式</div>
+                <div ng-message="isUnique">email已被注册</div>
+            </div>
+            <div ng-cloak ng-show="signUpForm.email.$touched && signUpForm.email.$valid" class="success-message">
+                <i
+                        class="tick-icon"></i></div>
+            <div ng-cloak dis-loading="signUpForm.email.$pending" class="pending-message" size="12"></div>
+            <input id="email" name="email" type="text"
+                   check-input
+                   ng-pattern='/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
+                   ng-model="User.signupModel.email"
+                   ng-model-options="{updateOn:'blur'}"
+                   ng-class="{'error':signUpForm.email.$invalid }"
+                   check-unique="email"
+                   ng-disabled="User.userData.isRefresh"
+                   placeholder="输入邮件"
+            >
+        </fieldset>
+        <fieldset>
+            <label for="password">密码：</label>
+            <div class="error-messages" ng-cloak ng-messages="signUpForm.password.$error">
+                <div ng-message="empty">需要输入密码</div>
+                <div ng-message="pattern">密码只能由英文数字和半角符号组成</div>
+                <div ng-message="pattern">密码只能由英文数字和半角符号组成</div>
+                <div ng-message="minlength,maxlength">密码长度在3到16个符号之间</div>
+            </div>
+            <div ng-cloak ng-show="signUpForm.password.$touched && signUpForm.password.$valid" class="success-message">
+                <i
+                        class="tick-icon"></i></div>
+            <input id="password" name="password" type="password" ng-minlength="3" ng-maxlength="16"
+                   ng-pattern="User.passwordPattern" ng-model="User.signupModel.password"
+                   ng-model-options="{ allowInvalid: true }"
+                   ng-class="{'error':signUpForm.password.$invalid }"
+                   check-input
+                   ng-disabled="User.userData.isRefresh"
+                   placeholder="至少3个字符"
+            >
+            <label for="password">重复密码：</label>
+            <div class="error-messages" ng-cloak ng-messages="signUpForm.passwordRepeat.$error">
+                <div ng-message="repeat">重复密码不一致</div>
+                <div ng-message="empty">请输入重复密码</div>
+            </div>
+            <div ng-cloak ng-show="signUpForm.passwordRepeat.$touched && signUpForm.passwordRepeat.$valid"
+                 class="success-message">
+                <i
+                        class="tick-icon"></i></div>
+            <input id="repeat-pwd" name="passwordRepeat" type="password" placeholder="输入重复密码" ng-minlength="3"
+                   ng-model="User.signupModel.passwordRepeat" ng-model-options="{ allowInvalid: true }"
+                   ng-class="{'error':signUpForm.passwordRepeat.$invalid }"
+                   check-repeat="signUpForm.passwordRepeat,signUpForm.password"
+                   check-input
+                   ng-disabled="User.userData.isRefresh"
+            >
+        </fieldset>
+        <fieldset class="button-group">
+            <div ng-cloak dis-loading="User.userData.isRefresh" class="loading-besidebtn" size="28"></div>
+            <button ng-disabled="User.detectedRefresh.isRefresh" class="button-submit button-round"
+                    ng-click="User.signUpUser(signUpForm)">提交
+            </button>
+            <button class="button-cancel button-round">取消</button>
+        </fieldset>
+    </form>
+</div>

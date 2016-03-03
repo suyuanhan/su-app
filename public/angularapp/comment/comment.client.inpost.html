@@ -1,0 +1,45 @@
+<div ng-controller="CommentsController as Comments">
+    <div dis-loading="Comments.commentsData.isRefresh" class="loading"></div>
+    <ul ng-if="!Comments.commentsData.isRefresh" class="comments-list" strong-comment>
+        <li ng-repeat="comment in Comments.commentsData.data">
+            <a href="/user/{{ comment.creator.username }}"><img ng-src="{{ comment.creator.avatar }}" alt=""></a>
+            <div id="commentid_{{::comment.commentId}}" class="comment-content post-radius">
+                <i class="arrow-icon"></i>
+                <span class="username light">{{ comment.creator.username }}
+                    <span
+                            class="light">发表于 {{ comment.createTime }}</span></span>
+                <div class="comment-body">{{ comment.content }}</div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="comment-form post-radius">
+        <div class="comment-form-wrapper">
+            <form name="commentForm">
+                <h3>发表回复</h3>
+                <div class="error-messages" ng-cloak ng-messages="commentForm.content.$error">
+                    <div ng-message="empty">需要输入内容</div>
+                    <div ng-message="maxLength">内容在500个文字以内</div>
+                </div>
+                <div class="comment-reject-overlay" ng-if="!Comments.userData.isUserExist">
+                    发表回复请先<a href="#" popup-login-modal>登录</a>
+                </div>
+                    <textarea ng-disabled="Comments.commentData.isRefresh" class="comment-editor"
+                              name="content"
+                              ng-model="Comments.commentData.data.content"
+                              check-max-length="1000"
+                              check-input
+                    ></textarea>
+                <fieldset class="button-group">
+                    <div dis-loading="Comments.commentData.isRefresh" class="loading-besidebtn"></div>
+                    <button
+                            ng-disabled="Comments.commentData.isRefresh"
+                            type="button" class="comment-reply button-submit button-round"
+                            ng-click="Comments.addComment(commentForm)">
+                        回复
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

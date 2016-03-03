@@ -1,0 +1,35 @@
+<div class="post-display-wrapper" ng-controller="PostSingleContentController as PostContent">
+    <div class="post post-radius">
+        <div dis-loading="PostContent.postData.isRefresh" class="loading"></div>
+        <div ng-if="!PostContent.postData.isRefresh" class="post-wrapper">
+            <div class="post-head">
+                <div class="post-head-inner">
+                    <div class="title">{{ ::PostContent.postData.data.title }}</div>
+                    <span class="post-info">{{ ::PostContent.postData.data.creator.username }}</span>
+                    <span class="light">发表于:{{ PostContent.postData.data.createdAt }}</span>
+                    <div class="post-tags" ng-if="PostContent.postData.data.tags.length>0">tags:
+                        <a class="tag-link" ng-repeat="tag in PostContent.postData.data.tags" href="/tags/{{ tag}}">{{
+                            tag }}</a>
+                    </div>
+                </div>
+            </div>
+            <a class="avatar-link" href="/user/{{ ::PostContent.postData.data.creator.username }}">
+                <img ng-src="{{ ::PostContent.postData.data.creator.avatar }}" alt="">
+            </a>
+            <div class="clear-float"></div>
+            <div class="post-content">{{ ::PostContent.postData.data.content}}</div>
+            <div class="post-actions">
+                <button ng-disabled="PostContent.postFavIsLoading"
+                        ng-class="{'cancelFav':PostContent.postData.data.isFav,'isFav':!PostContent.postData.data.isFav}"
+                        ng-click="PostContent.postFav()"
+                        class="float-right button-round"
+                >
+                    <img ng-show="PostContent.postFavIsLoading" ng-src="/images/loading.gif">
+                    <span>{{ PostContent.postData.data.isFav ? "已收藏":"收藏" }}</span>
+                </button>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </div>
+    <div ui-view="comments"></div>
+</div>

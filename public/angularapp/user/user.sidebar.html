@@ -1,0 +1,5 @@
+<div id="user-panel" ng-controller="UserController as User">
+    <div ng-if="User.userData.isRefresh" class="loading color-light" text="loading" my-loader></div>
+    <div ng-include="User.userData.isUserExist ? null : '/angularapp/user/user.loginform.html' "></div>
+    <div ng-include="User.userData.isUserExist ? '/angularapp/user/user.showinfo.html' : null "></div>
+</div>

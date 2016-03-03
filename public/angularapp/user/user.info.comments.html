@@ -1,0 +1,26 @@
+<div ng-controller="CommentsController as Comments">
+    <div dis-loading="Comments.commentsData.isRefresh" class="loading"></div>
+    <div ng-show="!Comments.commentsData.isRefresh && Comments.commentsData.data.length === 0" class="show-result">
+        没有发表评论
+    </div>
+    <ul ng-if="!Comments.commentsData.isRefresh">
+        <li ng-repeat="comment in Comments.commentsData.data" ng-class="{even : $index%2==0, odd : !($index%2==0)}">
+            <h3 class="comment">
+                <div class="commentlist-title">
+                    主题:<a href="/post/{{ ::comment.postIn._id }}#{{ ::comment.commentId }}">{{ ::comment.postIn.title
+                    }}</a><br/>
+                </div>
+                <div class="commentlist-comment ">
+                    <span>回复:{{ ::comment.content }}</span>
+                    <div ng-show="UserSub.checkIsAuthority()" class="button-wrapper">
+                        <button ng-click="Comments.popupDeleteCommentConfirm($index,comment)"
+                                class="icon comment">
+                            <i class="button-icon delete-icon"></i><span class="hide480">删除</span></button>
+                    </div>
+                </div>
+                <div class="clear-float"></div>
+            </h3>
+
+        </li>
+    </ul>
+</div>

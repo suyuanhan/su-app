@@ -1,0 +1,17 @@
+<div class="tags-showall" ng-controller="TagsListAllController as Tags">
+    <div dis-loading="Tags.tagsData.isRefresh" class="loading"></div>
+    <h1 ng-show="Tags.tagsData.data.length==0" class="show-result">
+        没有任何标签
+    </h1>
+    <h1 ng-repeat="tagObj in Tags.tagsData.data">
+        {{ tagObj.firstLetter }}
+        <ul>
+            <li ng-repeat="arr in tagObj.tagArr">
+                <a class="tag-link" href="/tags/{{ arr.tagName }}">
+                    <span class="tag tag-name">{{ arr.tagName }}</span><span
+                        class="tag tag-count">{{ arr.count }}</span>
+                </a>
+            </li>
+        </ul>
+    </h1>
+</div>

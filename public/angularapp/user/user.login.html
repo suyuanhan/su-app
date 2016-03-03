@@ -1,0 +1,56 @@
+<div class="modal-content post-radius">
+    <div class="modal-header">
+        <button class="modal-close-btn" type="button">×</button>
+        <h4>用户登录</h4>
+    </div>
+    <form ng-controller="UserController as User" name="loginForm" novalidate="novalidate"
+    >
+        <div ng-cloak class="error-hint"
+             ng-show="User.userData.isUserDataVaild !== null && !User.userData.isUserDataVaild">
+            用户名或者密码错误
+        </div>
+        <fieldset>
+            <label for="username">用户名：</label>
+            <div class="error-messages" ng-cloak
+                 ng-messages="loginForm.username.$error">
+                <div ng-message="empty">需要输入用户名</div>
+            </div>
+            <input id="username" name="username" type="text" ng-trim="false"
+                   ng-model="User.loginModel.username"
+                   ng-class="{'error':loginForm.username.$invalid }"
+                   class="button-round"
+                   check-input
+                   ng-disabled="User.userData.isRefresh"
+            >
+        </fieldset>
+        <fieldset>
+            <label for="password">密码：</label>
+            <div class="error-messages" ng-cloak
+                 ng-messages="loginForm.password.$error">
+                <div ng-message="empty">需要输入密码</div>
+            </div>
+            <input id="password" name="password" type="password"
+                   ng-pattern="user.passwordPattern" ng-model="User.loginModel.password"
+                   ng-model-options="{ allowInvalid: true }" ng-class="{'error':loginForm.password.$invalid }"
+                   class="button-round"
+                   ng-disabled="User.userData.isRefresh"
+                   check-input>
+        </fieldset>
+        <fieldset class="button-group">
+            <div dis-loading="User.userData.isRefresh" class="loading-besidebtn"></div>
+            <button
+                    class="button-submit button-round"
+                    ng-click="User.loginUser(loginForm)"
+                    ng-disabled="User.userData.isRefresh"
+                    type="submit"
+            >提交
+            </button>
+            <button
+                    class="button-cancel button-round"
+                    ng-disabled="User.userData.isRefresh"
+                    ng-click="User.popupUserSignupModal()"
+            >注册
+            </button>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,56 @@
+$hint-bgColor: #6ee;
+#form-signin {
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
+    }
+    .error {
+        background: red;
+    }
+    margin: 30px auto;
+    width: 50%;
+    border: 1px solid gray;
+
+    label {
+        display: block;
+        font-size: 14px;
+    }
+
+    fieldset {
+        position: relative;
+        border: none;
+        .hint-wrapper {
+            position: absolute;
+            //top: 22px;
+            left: 200px;
+            ul {
+                padding: 6px;
+                margin: 0;
+                background: $hint-bgColor;
+                border: 1px solid gray;
+                list-style: none;
+                li {
+                    font-size: 12px;
+                }
+            }
+            span.arrow-top, span.arrow-bottom {
+                position: absolute;
+                top: 6px;
+                font-size: 12px;
+            }
+            .arrow-top {
+                left: -6px;
+                color: #000;
+                z-index: -1;
+            }
+            .arrow-bottom {
+                top: 0;
+                left: -5px;
+                position: absolute;
+                color: $hint-bgColor;
+            }
+        }
+    }
+}

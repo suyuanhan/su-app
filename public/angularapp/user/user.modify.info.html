@@ -1,0 +1,65 @@
+<div class="modal-content post-radius">
+    <div class="modal-header">
+        <button class="modal-close-btn" type="button">×</button>
+        <h4>修改用户资料</h4>
+    </div>
+    <form ng-controller="UserController as User" name="loginForm" novalidate="novalidate"
+    >
+        <fieldset class="user-avart-wrapper" ng-init="User.initUpdateData(loginForm)">
+            <label for="user-avart">修改用户头像：</label>
+            <div class="error-messages" ng-cloak
+                 ng-messages="loginForm.file.$error">
+                <div ng-message="maxSize">文件在500k以内</div>
+                <div ng-message="fileType">只接受jpg和png格式</div>
+            </div>
+            <img ng-show="User.isUserAvatarShow" id="user-avart" class="user-avart"
+                 ng-src="{{ User.userAvatar }}"
+                 alt="">
+            <img-crop ng-cloak style="display:none;" image="User.myImage"
+                      result-image-size="100"
+                      result-image="User.myCroppedImage"></img-crop>
+            <div>Cropped Image:</div>
+            <div><img ng-cloak ng-show="!User.isUserAvatarShow" class="user-avart" ng-src="{{User.myCroppedImage}}"/>
+            </div>
+            <input type="file" name="file" id="fileInput"
+                   ng-disabled="User.userData.isRefresh"
+                   ng-model="User.updateModel.userAvatar" check-input-file
+                   style="display: none">
+            <div class="button-round select-avart"
+                 ng-model="User.updateModel.uploadFile"
+                 name="User.updateModel.uploadFile"
+                 ng-disabled="User.userData.isRefresh"
+                 ng-click="User.selectFile($event)"
+            >
+                <i class="file-icon"></i><span class="filename">{{ User.updateModel.uploadFile ? User.updateModel.uploadFile.name : "请选择图片" }}</span>
+            </div>
+        </fieldset>
+        <fieldset>
+            <label>修改用户描述：</label>
+            <div class="error-messages" ng-cloak
+                 ng-messages="loginForm.userDescription.$error">
+                <div ng-message="maxLength">只能输入500个字符</div>
+            </div>
+            <textarea
+                    ng-disabled="User.userData.isRefresh"
+                    name="userDescription" ng-model="User.updateModel.description"
+                    check-max-length="500"
+            ></textarea>
+        </fieldset>
+        <fieldset class="button-group">
+            <div dis-loading="User.userData.isRefresh" class="loading-besidebtn"></div>
+            <button
+                    class="button-submit button-round"
+                    ng-disabled="User.userData.isRefresh"
+                    ng-click="User.updateUser(loginForm)"
+            >提交
+            </button>
+            <button
+                    class="button-cancel button-round"
+                    ng-disabled="User.userData.isRefresh"
+            >取消
+            </button>
+            <button ng-show="userForm.loginForm.$pending">pending...</button>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+#form-signin {
+  margin: 30px auto;
+  width: 50%;
+  border: 1px solid gray; }
+  #form-signin .show {
+    display: block; }
+  #form-signin .hide {
+    display: none; }
+  #form-signin .error {
+    background: red; }
+  #form-signin label {
+    display: block;
+    font-size: 14px; }
+  #form-signin fieldset {
+    position: relative;
+    border: none; }
+    #form-signin fieldset .hint-wrapper {
+      position: absolute;
+      left: 200px; }
+      #form-signin fieldset .hint-wrapper ul {
+        padding: 6px;
+        margin: 0;
+        background: #6ee;
+        border: 1px solid gray;
+        list-style: none; }
+        #form-signin fieldset .hint-wrapper ul li {
+          font-size: 12px; }
+      #form-signin fieldset .hint-wrapper span.arrow-top, #form-signin fieldset .hint-wrapper span.arrow-bottom {
+        position: absolute;
+        top: 6px;
+        font-size: 12px; }
+      #form-signin fieldset .hint-wrapper .arrow-top {
+        left: -6px;
+        color: #000;
+        z-index: -1; }
+      #form-signin fieldset .hint-wrapper .arrow-bottom {
+        top: 0;
+        left: -5px;
+        position: absolute;
+        color: #6ee; }

@@ -1,0 +1,22 @@
+<div ng-controller="PostListController as PostList">
+    <div dis-loading="PostList.postsData.isRefresh" class="loading"></div>
+    <div ng-show="!PostList.postsData.isRefresh && PostList.postsData.data.length === 0" class="show-result">
+        没有发表文章
+    </div>
+    <ul>
+        <li ng-repeat="post in PostList.postsData.data" ng-class="{even : $index%2==0, odd : !($index%2==0)}">
+            <h3 class="post-item">
+                <a href="/post/{{ ::post.postId }}">
+                    {{ post.title }}
+                </a>
+                <div ng-show="UserSub.checkIsAuthority()" ng-controller="PostController as Post" class="button-wrapper">
+                    <button ng-click="Post.popupDeletePostModal($index,post.postId,post.title)" class="icon"><i
+                            class="button-icon delete-icon"></i><span class="hide480">删除</span></button>
+                    <button ng-click="Post.popupUpdatePostModal(post.postId)" class="icon"><i
+                            class="button-icon edit-icon"></i><span
+                            class="hide480">编辑</span></button>
+                </div>
+            </h3>
+        </li>
+    </ul>
+</div>

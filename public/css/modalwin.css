@@ -1,0 +1,233 @@
+body > .modal-trans-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  z-index: 9900;
+  background: rgba(0, 0, 0, 0.7); }
+
+body > .modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  z-index: 10000; }
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.2s ease-in; }
+
+.fade-child {
+  opacity: 0;
+  transition: opacity 1.0s ease-in; }
+
+.modal-bg.ng-enter,
+.modal-bg.ng-leave {
+  transition: all ease .2s; }
+
+.modal-bg.ng-enter,
+.modal-bg.ng-leave.ng-leave-active {
+  opacity: 0.0; }
+
+.modal-bg.ng-leave,
+.modal-bg.ng-enter.ng-enter-active {
+  opacity: 1.0; }
+
+.modal-content {
+  display: block;
+  position: absolute;
+  left: 50%;
+  width: 330px;
+  margin-left: -165px;
+  margin-top: 100px;
+  background: #fff;
+  z-index: 10099; }
+  .modal-content form {
+    display: block;
+    padding: 12px; }
+    .modal-content form .show {
+      display: block; }
+    .modal-content form .hide {
+      display: none; }
+    .modal-content form label {
+      display: inline-block;
+      font-size: 14px;
+      padding-bottom: 2px;
+      padding-top: 4px; }
+    .modal-content form input:disabled {
+      background: #8a8a8a; }
+    .modal-content form input[type="text"], .modal-content form input[type="password"] {
+      display: block;
+      width: 100%;
+      height: 24px;
+      margin-left: -2px;
+      font-size: 16px;
+      line-height: 24px; }
+    .modal-content form fieldset {
+      border: none; }
+      .modal-content form fieldset .hint-wrapper {
+        width: 200px;
+        position: absolute;
+        left: 200px; }
+        .modal-content form fieldset .hint-wrapper ul {
+          padding: 6px;
+          margin: 0;
+          background: #6ee;
+          border: 1px solid gray;
+          list-style: none; }
+          .modal-content form fieldset .hint-wrapper ul li {
+            font-size: 12px; }
+        .modal-content form fieldset .hint-wrapper span.arrow-top, .modal-content form fieldset .hint-wrapper span.arrow-bottom {
+          position: absolute;
+          top: 6px;
+          font-size: 12px;
+          z-index: 10100; }
+        .modal-content form fieldset .hint-wrapper .arrow-top {
+          left: -6px;
+          color: #000;
+          z-index: 10099; }
+        .modal-content form fieldset .hint-wrapper .arrow-bottom {
+          top: 0;
+          left: -4px;
+          position: absolute;
+          color: #6ee; }
+    .modal-content form img.user-avart {
+      width: 100px;
+      height: 100px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
+      display: block; }
+    .modal-content form div.select-avart {
+      width: 210px;
+      height: 50px;
+      margin: 3px 0 2px 0;
+      font-size: 0;
+      color: #fff;
+      text-align: center;
+      background: #473d58;
+      line-height: 50px;
+      cursor: pointer; }
+      .modal-content form div.select-avart i {
+        display: inline-block;
+        vertical-align: middle; }
+      .modal-content form div.select-avart span.filename {
+        display: inline-block;
+        height: 14px;
+        line-height: 14px;
+        font-size: 14px;
+        vertical-align: middle; }
+    .modal-content form label[for="user-avart"] {
+      display: inline-block; }
+    .modal-content form button.upload {
+      display: inline-block; }
+    .modal-content form textarea[name="userDescription"] {
+      width: 100%;
+      height: 80px;
+      font-size: 14px; }
+  .modal-content .modal-header button.modal-close-btn {
+    width: 30px;
+    float: right;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 700;
+    background: none;
+    border: none; }
+  .modal-content .modal-header button.modal-close-btn:hover {
+    color: #8a8a8a;
+    cursor: pointer; }
+  .modal-content .modal-header h4 {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 28px;
+    font-size: 14px;
+    color: #776695;
+    line-height: 28px;
+    border-bottom: 1px solid #abadbd;
+    text-align: center; }
+  .modal-content .modal-body {
+    padding: 10px 0; }
+    .modal-content .modal-body img {
+      width: 20px;
+      height: 20px; }
+    .modal-content .modal-body span {
+      vertical-align: top;
+      padding-left: 10px;
+      font-size: 14px;
+      line-height: 20px; }
+  .modal-content .modal-footer {
+    padding-bottom: 10px; }
+  .modal-content form.post-creator textarea {
+    display: block;
+    width: 100%;
+    margin-left: -2px;
+    height: 100px;
+    font-size: 14px; }
+  .modal-content form.post-creator input[type="raido"] {
+    font-size: 14px; }
+  .modal-content form.post-creator ul.post-creator-tags li {
+    display: inline-block;
+    height: 22px;
+    margin-top: 5px;
+    margin-right: 8px; }
+    .modal-content form.post-creator ul.post-creator-tags li span.tag-close {
+      font-weight: normal;
+      cursor: pointer; }
+  .modal-content form.post-creator div.input-wrapper {
+    width: 100%;
+    float: left; }
+    .modal-content form.post-creator div.input-wrapper div.input-place {
+      margin-right: 30px; }
+      .modal-content form.post-creator div.input-wrapper div.input-place input {
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+        border: 1px solid #8a8a8a; }
+  .modal-content form.post-creator button.tag-add {
+    float: left;
+    margin-left: -30px;
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+    color: #fff;
+    background: #473d58;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: none; }
+  .modal-content .error-messages {
+    display: inline-block;
+    font-size: 12px;
+    color: #CD5C5C; }
+  .modal-content .success-message {
+    display: inline-block;
+    font-size: 12px;
+    color: #2b542c; }
+  .modal-content .pending-message {
+    display: inline-block; }
+    .modal-content .pending-message img {
+      width: 12px;
+      height: 12px; }
+  .modal-content .confirm-info {
+    padding: 12px;
+    font-size: 14px;
+    color: #473d58; }
+
+.modal-content.ng-enter, .modal-trans-bg.ng-enter,
+.modal-content.ng-leave, .modal-trans-bg.ng-leave {
+  transition: all ease 0.7s; }
+
+.modal-content.ng-enter,
+.modal-trans-bg.ng-leave,
+.modal-content.ng-leave.ng-leave-active
+.modal-trans-bg.ng-leave.ng-leave-active {
+  opacity: 0.0; }
+
+.modal-content.ng-leave,
+.modal-trans-bg.ng-leave,
+.modal-content.ng-enter.ng-enter-active,
+.modal-trans-bg.ng-enter.ng-enter-active {
+  opacity: 1.0; }

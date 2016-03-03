@@ -1,0 +1,29 @@
+<div>
+    <ul class="post-creator-tags">
+        <li ng-repeat="tag in postTags">
+            <span class="tag tag-name">{{ tag }}</span>
+            <span
+                    ng-disabled="disabled"
+                    ng-click="removeTag($index)" class="tag tag-count tag-close">×</span>
+        </li>
+    </ul>
+    <div class="input-wrapper">
+        <div class="input-place">
+            <input
+                    type="text"
+                    name="tagsInput"
+                    ng-model="tagVal"
+                    ng-keyup="addTag($event)"
+                    ng-disabled="disabled"
+                    check-max-length="12"
+                    placeholder="使用,或者enter分割tags"
+                    class="placeholder"
+            />
+        </div>
+    </div>
+    <button
+            ng-disabled="disabled"
+            type="button" class="tag-add " ng-click="addTagClick()">+
+    </button>
+</div>
+

@@ -1,0 +1,67 @@
+<div class="modal-content post-radius">
+    <div class="modal-header">
+        <button class="modal-close-btn" type="button">×</button>
+        <h4 ng-cloak>{{ Post.title }}</h4>
+    </div>
+
+    <form name="PostForm" class="post-creator" novalidate="novalidate">
+        <div ng-cloak class="error-hint"
+             ng-show="Post.postFormDataModel.isRefresh && Post.formState ==='update' && !Post.postFormDataModel.data.title "
+
+        >
+            读取数据中....
+        </div>
+        <fieldset>
+            <label for="post-creator-title">标题:</label>
+            <div class="error-messages" ng-cloak ng-messages="PostForm.title.$error">
+                <div ng-message="empty">需要输入标题</div>
+                <div ng-message="maxLength">标题在20个中文以内</div>
+            </div>
+            <input id="post-creator-title" type="text" ng-model="Post.postFormDataModel.data.title"
+                   name="title"
+                   ng-disabled="Post.postFormDataModel.isRefresh || Post.formState ==='update'"
+                   check-input
+                   check-max-length="40"
+                   class="button-round"
+                   placeholder="20个中文以内"
+            >
+            <label for="post-creator-content">内容:</label>
+            <div class="error-messages" ng-cloak ng-messages="PostForm.content.$error">
+                <div ng-message="empty">需要输入内容</div>
+                <div ng-message="maxLength">内容在500个中文以内</div>
+            </div>
+            <textarea id="post-creator-content" ng-model="Post.postFormDataModel.data.content"
+                      name="content"
+                      ng-disabled="Post.postFormDataModel.isRefresh"
+                      check-input
+                      check-max-length="1000"
+                      class="button-round"
+                      placeholder="在500中文以内"
+            ></textarea>
+            <label>标签:</label>
+            <div class="error-messages" ng-cloak ng-messages="PostForm.tagsInput.$error">
+                <div ng-message="maxLength">标题在6个中文以内</div>
+                <div ng-message="tagsMaxLength">只能在5个标签以内</div>
+            </div>
+            <div ng-model="Post.postFormDataModel.data.tags" ng-disabled="Post.postFormDataModel.isRefresh"
+                 tags-input="PostForm"></div>
+        </fieldset>
+        <fieldset class="button-group">
+            <div dis-loading="Post.postFormDataModel.isRefresh" class="loading-besidebtn"></div>
+            <button ng-cloak class="button-submit button-round" ng-if="Post.formState ==='create' "
+                    type="button"
+                    ng-disabled="Post.postFormDataModel.isRefresh"
+                    ng-click="Post.createPost(PostForm)">提交
+            </button>
+            <button ng-cloak class="button-submit button-round" ng-if="Post.formState ==='update' "
+                    type="button"
+                    ng-disabled="Post.postFormDataModel.isRefresh"
+                    ng-click="Post.updatePost(PostForm)">更新
+            </button>
+            <button
+                    ng-disabled="Post.postFormDataModel.isRefresh"
+                    class="button-cancel button-round" type="button">取消
+            </button>
+        </fieldset>
+    </form>
+</div>

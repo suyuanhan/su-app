@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+	<link rel="stylesheet" href="/dist/app-min.css"/>
+
+	<base href="/"/>
+
+	<title>Su-App</title>
+</head>
+<body>
+<div id="full-wrapper">
+	<div id="nav-wrapper">
+		<div id="nav">
+			<div id="nav-main-menu" hide-menu-class="hideLess1024" toggle-menu="#main-menu,#nav-menu">
+				<button class="button-round nav-res-button hide-button" id="main-menu" type="button"></button>
+				<ul id="nav-menu" class="nav-menu-list show1024">
+					<li class="hideLess1024">
+						<a class="logo" ui-sref="home" href="/">
+							<img src="/images/logo.png" alt="">
+						</a>
+					</li>
+					<li ng-cloak ui-sref-active="current" class="current">
+						<a ui-sref="home" href="/">首页</a>
+					</li>
+					<li ng-cloak ui-sref-active="current" class="current">
+						<a ui-sref="tags" href="/tags">所有标签</a>
+					</li>
+				</ul>
+				<div ng-cloak class="user-wrapper hide1024">
+					<div ng-controller="UserController as User" hide-menu-class="hide-menu"
+						 toggle-menu="#user-menu,#user-info-menu">
+						<button id="refresh-button" ng-show="User.userData.isRefresh && !User.userData.isUserExist"
+								class="nav-res-button button-round hide-button"
+								type="button">
+						</button>
+						<div id="visitor" ng-show="!User.userData.isUserExist && !User.userData.isRefresh">
+							<button id="user-login"
+									popup-login-modal
+									class="nav-res-button button-round hide-button"
+									type="button"></button>
+							<span class="welcome hide-1024" popup-login-modal>你好,游客</span>
+						</div>
+						<div id="user-menu">
+							<button ng-show="User.userData.isUserExist && !User.userData.isRefresh"
+									id="user-menu-button"
+									class="nav-res-button hide-button float-right"
+									type="button">
+								<img ng-src="{{User.userData.data.avatar}}" alt="">
+							</button>
+						<span ng-show="User.userData.isUserExist && !User.userData.isRefresh" class="welcome">
+							你好:{{ User.userData.data.username }}
+						</span>
+						</div>
+						<ul id="user-info-menu" class="nav-menu-list">
+							<li>
+								<a id="goToUserPage" href="/user/{{User.userData.data.username}}">个人主页</a>
+							</li>
+							<li>
+								<a id="createPost" popup-createpost-form href="#">发表文章</a>
+							</li>
+							<li>
+								<a id="modifyUserInfo" href="#" popup-modify-panel>修改用户信息</a>
+							</li>
+							<li>
+								<a id="signOut" href="#" ng-click="User.signOutUser()">注销</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="nav-placeholder"></div>
+	<div id="content-wrapper">
+		<div id="content">
+			<div ui-view></div>
+		</div>
+		<div class="hideLess1024 sidebar">
+			<div ng-include="'/angularapp/user/user.sidebar.html'"></div>
+			<div id="user-action"></div>
+		</div>
+	</div>
+	<div class="footer-placeHolder"></div>
+</div>
+<div id="footer">
+	<div class="footer-inner">
+		<div ng-include="'/angularapp/views/footer.html'"></div>
+	</div>
+</div>
+
+<script src="//cdn.bootcss.com/angular.js/1.4.7/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.7/angular-animate.min.js"></script>
+<script src="//cdn.bootcss.com/underscore.js/1.4.3/underscore-min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.7/angular-resource.min.js"></script>
+<script src="//cdn.bootcss.com/angular-ui-router/0.2.16/angular-ui-router.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.7/angular-messages.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.7/angular-touch.min.js"></script>
+<script src="//cdn.bootcss.com/restangular/1.5.1/restangular.min.js"></script>
+<script src="//cdn.bootcss.com/angular-md5/0.1.10/angular-md5.min.js"></script>
+<script src="/components/ng-crop/ng-img-crop.js"></script>
+
+<script src="/dist/app-min.js"></script>
+</body>
+</html>

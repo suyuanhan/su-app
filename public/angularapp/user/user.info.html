@@ -1,0 +1,24 @@
+<div class="user-info-wrapper" ng-controller="UserInfoController as User">
+    <div dis-loading="User.userData.isRefresh" class="loading"></div>
+    <div ng-if="!User.userData.isRefresh" class="user-info post-radius">
+        <img ng-src="{{ User.userData.data.avatar }}" alt="">
+        <h1 class="username">{{ User.userData.data.username }}</h1>
+        <div class="user-description">{{ User.userData.data.description }}</div>
+    </div>
+    <div class="user-alldocs-wrapper post-radius">
+        <ul class="user-menu-list post-radius">
+            <li ui-sref-active="current-item">
+                <a ui-sref="user.posts">文章</a>
+            </li>
+            <li ui-sref-active="current-item">
+                <a ui-sref="user.comments">评论</a>
+            </li>
+            <li ui-sref-active="current-item">
+                <a ui-sref="user.fav">收藏</a>
+            </li>
+        </ul>
+        <div ng-controller="UserSubjectController as UserSub" class="user-relative-docs post-radius">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

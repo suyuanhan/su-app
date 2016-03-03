@@ -1,0 +1,11 @@
+<a class="avatar-sidebar" href="/user/{{ User.userData.data.username }}">
+    <img class="user-avatar" ng-src="{{  User.userData.data.avatar}}" alt="">
+    <h4>{{ User.userData.data.username }}</h4>
+</a>
+<div class="user-description">{{ User.userData.data.description }}</div>
+<button type="button" class="button-round" trigger-element-action="#goToUserPage">
+    个人主页
+</button>
+<button type="button" class="button-round" trigger-element-action="#createPost">发表文章</button>
+<button type="button" class="button-round" trigger-element-action="#modifyUserInfo">修改资料</button>
+<button type="button" class="button-round" trigger-element-action="#signOut">注销</button>

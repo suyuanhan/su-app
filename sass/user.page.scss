@@ -1,0 +1,193 @@
+@import "blog.variables.config";
+
+.sidebar {
+    #user-panel {
+        padding: 20px 0;
+        text-align: center;
+        background: $main-color;
+        font-size: 0;
+        img.user-avatar {
+            @include imgRadius(100px);
+            border: 4px solid $main-color-lighten;
+        }
+        h4 {
+            margin: 10px auto;
+            font-size: 18px;
+            color: #fff;
+        }
+        div.user-description {
+            width: 90%;
+            margin: 0 auto 20px;
+            font-size: 14px;
+            color: #fff;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        h2.login-title {
+            font-size: 24px;
+            color: #fff;
+        }
+        a {
+            text-decoration: none;
+        }
+        button {
+            width: 90%;
+            height: 30px;
+            background: $main-color;
+            font-size: 12px;
+        }
+
+    }
+
+}
+
+#content {
+    .user-info {
+        display: inline-block;
+        margin-top: 24px;
+        width: 100%;
+        background: #fff;
+        padding-bottom: 12px;
+
+        img {
+            float: left;
+            display: block;
+            margin-left: 10px;
+            margin-top: 6px;
+            margin-right: 10px;
+            @include imgRadius(60px)
+        }
+        h1.username {
+            margin-top: 10px;
+            width: 100%;
+            font-size: 20px;
+        }
+        .user-description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: $main-color;
+            white-space: pre-wrap;
+            float: left;
+        }
+        .button-wrapper {
+            text-align: right;
+            button {
+                display: inline-block;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .user-alldocs-wrapper {
+        margin-top: 20px;
+        padding: 4px;
+        background: $main-color;
+        text-align: center;
+        ul.user-menu-list {
+            display: block;
+            li {
+                display: inline-block;
+                width: 100px;
+                height: 30px;
+                background: $main-color-lighten;
+                border-radius: 6px 6px 0 0;
+                box-sizing: border-box;
+                vertical-align: top;
+                border-top: 4px solid $main-color-lighten;
+                font-size: 14px;
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    line-height: 24px;
+                    text-decoration: none;
+                    color: $main-color;
+                }
+            }
+            li.current-item {
+                background: #fff;
+                border-top: 4px solid $second-color;
+                font-weight: bold;
+            }
+            li:hover {
+                cursor: pointer;
+                a {
+                    color: $main-color-darken;
+                }
+            }
+        }
+        .user-relative-docs {
+            width: 99.5%;
+            margin: 0 auto;
+            background: #fff;
+            ul {
+                width: 100%;
+                padding: 10px 0;
+                li {
+                    div.editor-button {
+                        display: inline-block;
+                        margin-left: -200px;
+                        width: 200px;
+                        vertical-align: top;
+                    }
+                    h3.post-item, h3.fav-item {
+                        height: 30px;
+                        line-height: 30px;
+                        .button-wrapper {
+                            float: right;
+                            height: 30px;
+                            line-height: 30px;
+                        }
+                        a {
+                            color: $main-color-darken;
+                            text-decoration: none;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    h3 {
+                        width: 98%;
+                        margin: 0 auto;
+                        font-size: 14px;
+                        font-weight: normal;
+                        text-align: left;
+                        border-bottom: 1px dashed $color-light;
+
+                        div.commentlist-title {
+                            padding-top: 10px;
+                            a {
+                                color: $main-color-darken;
+                                text-decoration: none;
+                            }
+                            a:hover {
+                                color: $main-color-darken;
+                                text-decoration: underline;
+                            }
+
+                        }
+                        div.commentlist-comment {
+                            height: 24px;
+                            font-size: 0px;
+                            line-height: 24px;
+                            span {
+                                display: inline-block;
+                                font-size: 14px;
+                                line-height: 24px;
+                                vertical-align: middle;
+                            }
+                            div.button-wrapper {
+                                float: right;
+                                height: 24px;
+                            }
+                        }
+                    }
+                    h3.comment {
+                        padding-bottom: 4px;
+                    }
+
+                }
+            }
+        }
+    }
+}

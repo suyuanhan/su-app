@@ -1,0 +1,186 @@
+@import "blog.variables.config";
+
+#content {
+    display: block;
+    div.post {
+        margin-top: 24px;
+        background: #fff;
+        div.post-wrapper {
+            width: 96%;
+            margin: 0 auto;
+            padding-bottom: 10px;
+
+            a.avatar-link {
+                display: block;
+                float: left;
+                margin-left: -100%;
+                margin-top: 7px;
+                font-size: 20px;
+                width: $post-header-image-size;
+                height: $post-header-image-size;
+                img {
+                    @include imgRadius($post-header-image-size)
+                }
+            }
+            div.post-head {
+                float: left;
+                display: block;
+                width: 100%;
+                margin-top: 7px;
+                div.post-head-inner {
+                    margin-left: $post-header-image-size + $post-title-gap;
+                    div.title {
+                        font-family: $font-family;
+                        font-size: 20px;
+                        word-wrap: break-word;
+                    }
+                    span.post-info {
+                        display: inline-block;
+                        font-size: $font-small;
+                        vertical-align: bottom;
+                        word-wrap: break-word;
+                    }
+                    div.post-title {
+                        display: inline-block;
+                        margin-top: 10px;
+                        height: 40px;
+                        vertical-align: top;
+                    }
+                    div.post-tags {
+                        font-size: 12px;
+                        a.tag-link {
+                            color: #abadbd;
+                        }
+                    }
+                    a.tag-link + a.tag-link {
+                        display: inline-block;
+                        margin-left: 4px;
+                    }
+                }
+
+            }
+            div.post-content {
+                margin-top: 10px;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 1px;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+            div.post-actions {
+                margin-top: 30px;
+                button {
+                    width: 70px;
+                    height: 30px;
+                    font-size: 0px;
+                    line-height: 30px;
+                    background: #eee;
+                    img {
+                        vertical-align: middle;
+                        width: 12px;
+                        height: 12px;
+                    }
+                    span {
+                        display: inline-block;
+                        font-size: 12px;
+                        height: 12px;
+                        line-height: 12px;
+                        padding: 0;
+                        margin: 0;
+                        vertical-align: middle;
+                    }
+                }
+                button.fav {
+                    background: #e0e0e0;
+                }
+                button.cancelFav {
+                    color: #fff;
+                    background: #d43f3a;
+                }
+            }
+        }
+    }
+
+    div.tags-wrapper {
+        h1.tag-name {
+            padding-top: 10px;
+            font-family: $font-family;
+            font-size: 18px;
+        }
+    }
+
+    ul.comments-list {
+        list-style: none;
+        li {
+            margin-top: 20px;
+            img {
+                display: block;
+                float: left;
+                @include imgRadius(48px);
+            }
+            div.comment-content {
+                position: relative;
+                margin-left: 60px;
+                padding: 0 2% 15px;
+                background: #fff;
+                i.arrow-icon {
+                    position: absolute;
+                    top: 10px;
+                    left: -10px;
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    background: url("/images/web-icons.png") -36px -65px no-repeat;
+                }
+                span {
+                    padding-top: 5px;
+                    font-size: 12px;
+                }
+                span.username {
+                    color: $main-color;
+                    vertical-align: bottom;
+                }
+                div.comment-body {
+                    margin-top: 10px;
+                    font-size: 14px;
+                    line-height: 24px;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                }
+
+            }
+
+        }
+    }
+    div.comment-form {
+        margin-top: 15px;
+        padding-bottom: 10px;
+        background: #fff;
+        div.comment-form-wrapper {
+            width: 96%;
+            margin: 0 auto;
+            h3 {
+                margin-top: 10px;
+                display: inline-block;
+                font-size: 18px;
+            }
+            form {
+                position: relative;
+                div.comment-reject-overlay {
+                    position: absolute;
+                    width: 100%;
+                    height: 100px;
+                    font-size: 22px;
+                    background: rgba(0, 0, 0, 0.1);
+                    color: #000;
+                }
+                textarea {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

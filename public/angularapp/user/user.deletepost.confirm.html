@@ -1,0 +1,26 @@
+<div class="modal-content post-radius">
+    <div class="modal-header">
+        <button class="modal-close-btn" type="button">×</button>
+        <h4>删除确认</h4>
+    </div>
+    <h1 ng-cloak class="confirm-info">
+        是否删除,主题为：{{ Post.postFormDataModel.title }} 的文章
+    </h1>
+    <form class="post-creator">
+        <div class="button-group button-group-confirm">
+            <div dis-loading="Post.postFormDataModel.isRefresh" size="28" class="loading-besidebtn"></div>
+            <button
+                    class="button-submit button-round"
+                    ng-disabled="Post.postFormDataModel.isRefresh"
+                    ng-click="Post.deletePost()"
+            >删除
+            </button>
+            <button
+                    class="button-cancel button-round goSignup"
+                    ng-disabled="user.postForm.isRefresh"
+            >取消
+            </button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,13 @@
+<div ng-controller="UserSubjectController as userSub">
+    <div dis-loading="userSub.subjectData.isRefresh" class="loading"></div>
+    <div ng-show="!userSub.subjectData.isRefresh && userSub.subjectData.data.length === 0" class="show-result">
+        没有添加收藏
+    </div>
+    <ul>
+        <li ng-repeat="favPost in userSub.subjectData.data" ng-class="{even : $index%2==0, odd : !($index%2==0)}">
+            <h3 class="fav-item">
+                <div><a href="/post/{{ ::favPost._id }}">{{ ::favPost.title }}</a></div>
+            </h3>
+        </li>
+    </ul>
+</div>

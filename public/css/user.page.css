@@ -1,0 +1,152 @@
+.sidebar #user-panel {
+  padding: 20px 0;
+  text-align: center;
+  background: #776695;
+  font-size: 0; }
+  .sidebar #user-panel img.user-avatar {
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    border: 4px solid #abadbd; }
+  .sidebar #user-panel h4 {
+    margin: 10px auto;
+    font-size: 18px;
+    color: #fff; }
+  .sidebar #user-panel div.user-description {
+    width: 90%;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    color: #fff;
+    white-space: pre-wrap;
+    word-wrap: break-word; }
+  .sidebar #user-panel h2.login-title {
+    font-size: 24px;
+    color: #fff; }
+  .sidebar #user-panel a {
+    text-decoration: none; }
+  .sidebar #user-panel button {
+    width: 90%;
+    height: 30px;
+    background: #776695;
+    font-size: 12px; }
+
+#content .user-info {
+  display: inline-block;
+  margin-top: 24px;
+  width: 100%;
+  background: #fff;
+  padding-bottom: 12px; }
+  #content .user-info img {
+    float: left;
+    display: block;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px; }
+  #content .user-info h1.username {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 20px; }
+  #content .user-info .user-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #776695;
+    white-space: pre-wrap;
+    float: left; }
+  #content .user-info .button-wrapper {
+    text-align: right; }
+    #content .user-info .button-wrapper button {
+      display: inline-block;
+      font-size: 12px; }
+
+#content .user-alldocs-wrapper {
+  margin-top: 20px;
+  padding: 4px;
+  background: #776695;
+  text-align: center; }
+  #content .user-alldocs-wrapper ul.user-menu-list {
+    display: block; }
+    #content .user-alldocs-wrapper ul.user-menu-list li {
+      display: inline-block;
+      width: 100px;
+      height: 30px;
+      background: #abadbd;
+      border-radius: 6px 6px 0 0;
+      box-sizing: border-box;
+      vertical-align: top;
+      border-top: 4px solid #abadbd;
+      font-size: 14px; }
+      #content .user-alldocs-wrapper ul.user-menu-list li a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height: 24px;
+        text-decoration: none;
+        color: #776695; }
+    #content .user-alldocs-wrapper ul.user-menu-list li.current-item {
+      background: #fff;
+      border-top: 4px solid #d1ab28;
+      font-weight: bold; }
+    #content .user-alldocs-wrapper ul.user-menu-list li:hover {
+      cursor: pointer; }
+      #content .user-alldocs-wrapper ul.user-menu-list li:hover a {
+        color: #473d58; }
+  #content .user-alldocs-wrapper .user-relative-docs {
+    width: 99.5%;
+    margin: 0 auto;
+    background: #fff; }
+    #content .user-alldocs-wrapper .user-relative-docs ul {
+      width: 100%;
+      padding: 10px 0; }
+      #content .user-alldocs-wrapper .user-relative-docs ul li div.editor-button {
+        display: inline-block;
+        margin-left: -200px;
+        width: 200px;
+        vertical-align: top; }
+      #content .user-alldocs-wrapper .user-relative-docs ul li h3.post-item, #content .user-alldocs-wrapper .user-relative-docs ul li h3.fav-item {
+        height: 30px;
+        line-height: 30px; }
+        #content .user-alldocs-wrapper .user-relative-docs ul li h3.post-item .button-wrapper, #content .user-alldocs-wrapper .user-relative-docs ul li h3.fav-item .button-wrapper {
+          float: right;
+          height: 30px;
+          line-height: 30px; }
+        #content .user-alldocs-wrapper .user-relative-docs ul li h3.post-item a, #content .user-alldocs-wrapper .user-relative-docs ul li h3.fav-item a {
+          color: #473d58;
+          text-decoration: none; }
+        #content .user-alldocs-wrapper .user-relative-docs ul li h3.post-item a:hover, #content .user-alldocs-wrapper .user-relative-docs ul li h3.fav-item a:hover {
+          text-decoration: underline; }
+      #content .user-alldocs-wrapper .user-relative-docs ul li h3 {
+        width: 98%;
+        margin: 0 auto;
+        font-size: 14px;
+        font-weight: normal;
+        text-align: left;
+        border-bottom: 1px dashed #8a8a8a; }
+        #content .user-alldocs-wrapper .user-relative-docs ul li h3 div.commentlist-title {
+          padding-top: 10px; }
+          #content .user-alldocs-wrapper .user-relative-docs ul li h3 div.commentlist-title a {
+            color: #473d58;
+            text-decoration: none; }
+          #content .user-alldocs-wrapper .user-relative-docs ul li h3 div.commentlist-title a:hover {
+            color: #473d58;
+            text-decoration: underline; }
+        #content .user-alldocs-wrapper .user-relative-docs ul li h3 div.commentlist-comment {
+          height: 24px;
+          font-size: 0px;
+          line-height: 24px; }
+          #content .user-alldocs-wrapper .user-relative-docs ul li h3 div.commentlist-comment span {
+            display: inline-block;
+            font-size: 14px;
+            line-height: 24px;
+            vertical-align: middle; }
+          #content .user-alldocs-wrapper .user-relative-docs ul li h3 div.commentlist-comment div.button-wrapper {
+            float: right;
+            height: 24px; }
+      #content .user-alldocs-wrapper .user-relative-docs ul li h3.comment {
+        padding-bottom: 4px; }

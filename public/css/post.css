@@ -1,0 +1,149 @@
+#content {
+  display: block; }
+  #content div.post {
+    margin-top: 24px;
+    background: #fff; }
+    #content div.post div.post-wrapper {
+      width: 96%;
+      margin: 0 auto;
+      padding-bottom: 10px; }
+      #content div.post div.post-wrapper a.avatar-link {
+        display: block;
+        float: left;
+        margin-left: -100%;
+        margin-top: 7px;
+        font-size: 20px;
+        width: 62px;
+        height: 62px; }
+        #content div.post div.post-wrapper a.avatar-link img {
+          width: 62px;
+          height: 62px;
+          -webkit-border-radius: 31px;
+          -moz-border-radius: 31px;
+          border-radius: 31px; }
+      #content div.post div.post-wrapper div.post-head {
+        float: left;
+        display: block;
+        width: 100%;
+        margin-top: 7px; }
+        #content div.post div.post-wrapper div.post-head div.post-head-inner {
+          margin-left: 68px; }
+          #content div.post div.post-wrapper div.post-head div.post-head-inner div.title {
+            font-family: "Microsoft Yahei", sans-serif;
+            font-size: 20px;
+            word-wrap: break-word; }
+          #content div.post div.post-wrapper div.post-head div.post-head-inner span.post-info {
+            display: inline-block;
+            font-size: 12px;
+            vertical-align: bottom;
+            word-wrap: break-word; }
+          #content div.post div.post-wrapper div.post-head div.post-head-inner div.post-title {
+            display: inline-block;
+            margin-top: 10px;
+            height: 40px;
+            vertical-align: top; }
+          #content div.post div.post-wrapper div.post-head div.post-head-inner div.post-tags {
+            font-size: 12px; }
+            #content div.post div.post-wrapper div.post-head div.post-head-inner div.post-tags a.tag-link {
+              color: #abadbd; }
+          #content div.post div.post-wrapper div.post-head div.post-head-inner a.tag-link + a.tag-link {
+            display: inline-block;
+            margin-left: 4px; }
+      #content div.post div.post-wrapper div.post-content {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 1px;
+        white-space: pre-wrap;
+        word-wrap: break-word; }
+      #content div.post div.post-wrapper div.post-actions {
+        margin-top: 30px; }
+        #content div.post div.post-wrapper div.post-actions button {
+          width: 70px;
+          height: 30px;
+          font-size: 0px;
+          line-height: 30px;
+          background: #eee; }
+          #content div.post div.post-wrapper div.post-actions button img {
+            vertical-align: middle;
+            width: 12px;
+            height: 12px; }
+          #content div.post div.post-wrapper div.post-actions button span {
+            display: inline-block;
+            font-size: 12px;
+            height: 12px;
+            line-height: 12px;
+            padding: 0;
+            margin: 0;
+            vertical-align: middle; }
+        #content div.post div.post-wrapper div.post-actions button.fav {
+          background: #e0e0e0; }
+        #content div.post div.post-wrapper div.post-actions button.cancelFav {
+          color: #fff;
+          background: #d43f3a; }
+  #content div.tags-wrapper h1.tag-name {
+    padding-top: 10px;
+    font-family: "Microsoft Yahei", sans-serif;
+    font-size: 18px; }
+  #content ul.comments-list {
+    list-style: none; }
+    #content ul.comments-list li {
+      margin-top: 20px; }
+      #content ul.comments-list li img {
+        display: block;
+        float: left;
+        width: 48px;
+        height: 48px;
+        -webkit-border-radius: 24px;
+        -moz-border-radius: 24px;
+        border-radius: 24px; }
+      #content ul.comments-list li div.comment-content {
+        position: relative;
+        margin-left: 60px;
+        padding: 0 2% 15px;
+        background: #fff; }
+        #content ul.comments-list li div.comment-content i.arrow-icon {
+          position: absolute;
+          top: 10px;
+          left: -10px;
+          display: block;
+          width: 12px;
+          height: 12px;
+          background: url("/images/web-icons.png") -36px -65px no-repeat; }
+        #content ul.comments-list li div.comment-content span {
+          padding-top: 5px;
+          font-size: 12px; }
+        #content ul.comments-list li div.comment-content span.username {
+          color: #776695;
+          vertical-align: bottom; }
+        #content ul.comments-list li div.comment-content div.comment-body {
+          margin-top: 10px;
+          font-size: 14px;
+          line-height: 24px;
+          white-space: pre-wrap;
+          word-wrap: break-word; }
+  #content div.comment-form {
+    margin-top: 15px;
+    padding-bottom: 10px;
+    background: #fff; }
+    #content div.comment-form div.comment-form-wrapper {
+      width: 96%;
+      margin: 0 auto; }
+      #content div.comment-form div.comment-form-wrapper h3 {
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 18px; }
+      #content div.comment-form div.comment-form-wrapper form {
+        position: relative; }
+        #content div.comment-form div.comment-form-wrapper form div.comment-reject-overlay {
+          position: absolute;
+          width: 100%;
+          height: 100px;
+          font-size: 22px;
+          background: rgba(0, 0, 0, 0.1);
+          color: #000; }
+        #content div.comment-form div.comment-form-wrapper form textarea {
+          display: inline-block;
+          width: 100%;
+          height: 100px;
+          font-size: 14px; }

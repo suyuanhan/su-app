@@ -1,0 +1,27 @@
+<div class="modal-content post-radius">
+    <div class="modal-header">
+        <button class="modal-close-btn" type="button">×</button>
+        <h4>删除回复确认</h4>
+    </div>
+    <div ng-cloak class="confirm-info">
+        是否删除
+        在{{ Comment.commentData.comment.postIn.title }} 的回复：{{ Comment.commentData.comment.content }}
+    </div>
+    <form class="post-creator">
+        <div class="button-group button-group-confirm">
+            <div dis-loading="Comment.commentData.isRefresh" size="28" class="loading-besidebtn"></div>
+            <button
+                    class="button-submit button-round"
+                    ng-disabled="Comment.commentData.isRefresh"
+                    ng-click="Comment.deleteComment()"
+            >删除
+            </button>
+            <button
+                    ng-disabled="Comment.commentData.isRefresh"
+                    class="button-cancel button-round goSignup"
+            >取消
+            </button>
+        </div>
+    </form>
+
+</div>

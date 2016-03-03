@@ -1,0 +1,46 @@
+$main-color: #776695;
+$main-color-darken: darken($main-color, 20%);
+$main-color-lighten: #abadbd;
+$second-color: #d1ab28;
+$color-light: #8a8a8a;
+
+$font-small: 12px;
+$font-normal-color: #fff;
+$font-family: 'Microsoft Yahei', sans-serif;
+$width-percent: 90%;
+
+$nav-bottom-border-width: 2px;
+$nav-current-brdbtm-width: 5px;
+$nav-height: 66px;
+$nav-responsive-height: 38px;
+$nav-lineheight: $nav-height/2;
+$nav-backgroud-color: $main-color-darken;
+
+$main-width: 78%;
+$side-width: 20%;
+$side-marign: 100% - $main-width - $side-width;
+
+$user-panel-height: 315px;
+$userpanel-navheight: $user-panel-height+$nav-height;
+
+$footer-height: 40px;
+$footer-border-width: 2px;
+
+$post-header-image-size: 62px;
+$post-title-gap: 6px;
+
+$hint-bgColor: #6ee;
+
+$modal-width: 330px;
+
+@mixin imgRadius($width) {
+    width: $width;
+    height: $width;
+    -webkit-border-radius: $width/2;
+    -moz-border-radius: $width/2;
+    border-radius: $width/2;
+}
+
+$modal-zindex: 10000;
+$nav-zindex: 1000;
+$panel-zindex: 100;

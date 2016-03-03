@@ -1,0 +1,76 @@
+<div class="tags-wrapper" ng-controller="TagsHomeController as Tags">
+    <div ng-show="Tags.tagsData.isRefresh" class="loading ">
+        <img src="/images/loading.gif"/>
+    </div>
+    <ul ng-show="!Tags.tagsData.isRefresh && Tags.stateName==='home'" class="tags">
+        <li ng-repeat="tag in Tags.tagsData.data">
+            <a class="tag-link" href="/tags/{{ ::tag.tagName }}">
+                <span class="tag tag-name">{{ ::tag.tagName }}</span><span
+                    class="tag tag-count">{{ ::tag.publicCount }}</span>
+            </a>
+        </li>
+        <li ng-show="Tags.tagsData.data.length > 0">
+            <a class="tag-link" href="/tags">
+                <span class="tag tag-show">查看全部</span>
+            </a>
+        </li>
+        <li ng-show="Tags.tagsData.data.length === 0">
+            <span class="show-result">没有任何标签</span>
+        </li>
+    </ul>
+    <h1 ng-show="Tags.stateName==='tagposts'" class="tag-name">
+        标签：{{ Tags.stateTagName ? Tags.stateTagName : "没有标签" }}
+    </h1>
+</div>
+<div ng-controller="PostListController as PostList">
+    <ul ng-if="PostList.postsData.data.length>0" class="posts">
+        <li class="post post-radius" ng-repeat="postData in PostList.postsData.data">
+            <div class="hide640 left-comment ">
+                <div class="comment-count-wrapper">
+                    <span class="comment-count">{{ ::postData.commentsCount }}</span>
+                </div>
+            </div>
+            <div class="right-user-info">
+                <ul>
+                    <li class="hide480">
+                        <a class="avart" href="/user/{{ ::postData.creator.username }}">
+                            <span>
+                            <img ng-src="{{ ::postData.creator.avatar }}" alt="">
+                            </span>
+                            {{::postData.creator.username }}
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="center-post-content">
+                <div class="post-content">
+                    <h1 class="title"><a href="/post/{{ ::postData._id }}">{{ ::postData.title }}</a></h1>
+                    <h3><i class="time-icon"></i>
+                        <span class="light">{{ ::postData.createdAt }}</span>
+                        <i ng-show="::postData.tags.length > 0" class="tags-icon"></i>
+                        <span class="light">{{ ::postData.tags.length===0 ? "": postData.tags }}</span>
+                    </h3>
+                    <div class="content">{{ ::postData.content }}</div>
+                </div>
+            </div>
+            <ul class="small-info">
+                <li><img ng-src="{{ ::postData.creator.avatar }}" alt="">
+                    <a href="/user/{{ ::postData.creator.username  }}"
+                       class="user-creator">
+                        {{ ::postData.creator.username}}</a>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+    <div dis-loading="PostList.postsData.isRefresh"
+         class="post post-radius loading"></div>
+    <h1 ng-if="PostList.postsData.isEndPosts || PostList.postsData.data.length ===  0" class="show-result text-center">
+        没有更多文章了</h1>
+    <div ng-if="PostList.postsData.isTimeout " class="post post-radius loading">
+        <h1 class="show-result">请求超时,请刷新页面</h1>
+    </div>
+
+</div>
