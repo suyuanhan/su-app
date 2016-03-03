@@ -1,6 +1,4 @@
 
-[TOC]
-
 Su-App项目简介
 ===================
 
@@ -91,7 +89,7 @@ app和config为后台nodejs文件，/public/angularapp为原始angular文件，/
 假如下载使用,需要对config/config.js mongodbURI,port,uploadPath等值进行配置
 
 ###联系方式
-TEL：13720220027
+TEL：13128220027
 Email：suyuanhan@gmail.com
 QQ：99165772
 
